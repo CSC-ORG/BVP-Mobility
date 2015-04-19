@@ -1,8 +1,7 @@
 package com.example.homeautomation;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.StatusLine;
@@ -14,7 +13,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -24,7 +25,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.iangclifton.android.floatlabel.FloatLabel;
 
 
@@ -161,9 +161,13 @@ public class MainActivity extends Activity {
     		if (res.equalsIgnoreCase("true")) 
     		{
     			Log.d("Successfully Login!", json.toString());
+    			HomeDatabase hd = new HomeDatabase(getApplicationContext());
+    			hd.createEntry(username, password);
+    			
     			Intent i = new Intent(getBaseContext(),Welcome.class);
     			finish();
     			startActivity(i);
+    			
     			 return json.getString(TAG_MESSAGE);
     		}
     		else{

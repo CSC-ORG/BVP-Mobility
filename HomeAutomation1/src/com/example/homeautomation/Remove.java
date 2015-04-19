@@ -30,7 +30,7 @@ public class Remove extends Activity {
 	            @Override
 	            public void onClick(View v) {
 	            	
-	            	Intent i = new Intent(getBaseContext(),Dashboard.class);
+	            	Intent i = new Intent(getBaseContext(),AllAppliance.class);
 	    			startActivity(i);
 	            }
 	        });

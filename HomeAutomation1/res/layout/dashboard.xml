@@ -6,16 +6,7 @@
     android:background="@color/darkgrey"
     android:orientation="vertical" >
 
-    <ToggleButton
-        android:id="@+id/FollowAndCenterButton3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:textOn="" android:textOff=""
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignLeft="@+id/FollowAndCenterButton2"
-        android:background="@drawable/change" />
-
+    
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -66,75 +57,14 @@
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
     
-    <ToggleButton
-        android:id="@+id/FollowAndCenterButton1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
-        android:layout_marginLeft="26dp"
-        android:textOn="" android:textOff=""
-        android:layout_toRightOf="@+id/textView4"
-        android:background="@drawable/change" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    
+       <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/FollowAndCenterButton1"
-        android:layout_marginTop="50dp"
-        android:text="LAMP"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <ToggleButton
-        android:id="@+id/FollowAndCenterButton2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:textOn="" android:textOff=""
-        android:layout_alignLeft="@+id/FollowAndCenterButton1"
-        android:background="@drawable/change" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/FollowAndCenterButton2"
-        android:layout_marginTop="50dp"
-        android:text="AC"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="21dp"
-        android:background="@drawable/roundedbutton"
-        
-        android:paddingBottom="20dp"
-        android:paddingLeft="1dp"
-        android:paddingRight="1dp"
-        android:paddingTop="20dp"
-        android:text="LOGOUT"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="105dp"
-        android:layout_marginLeft="70dp"
-        android:text="FAN"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="60dp" >
+    </ListView>
 
 </RelativeLayout>
