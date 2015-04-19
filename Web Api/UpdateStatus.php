@@ -3,7 +3,7 @@
 
 /***  include site wide/global configuration file  ***/
 require 'api.config.php';
-
+/* Empty elements check */
 if(empty($_GET['id']) || is_array($_GET['id']) || !preg_match('`^[0-9]{4,20}$`', $_GET['id']))
    output_json(array('response'=>false,'msg'=>'HomeID is Not Valid!'));
 
@@ -26,7 +26,7 @@ $PDOStmt->bindParam(':AppId', $_GET['appid'], PDO::PARAM_STR);
 $PDOStmt->bindParam(':AppStatus', $_GET['status'], PDO::PARAM_STR);
 
 $PDOStmt->execute();
-
+/* Query executed successfully */
 if($PDOStmt->rowCount())
    output_json(array('response'=>true,'msg'=>'Status Changed Successfully!'));
 
@@ -35,5 +35,6 @@ else
 
 }catch(Exception $ex)
 {
+/* Error Occured */
  output_json(array('response'=>false,'msg'=>'Invalid Status'));
 }

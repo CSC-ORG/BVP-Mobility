@@ -3,7 +3,7 @@
 /***  include site wide/global configuration file  ***/
 require 'api.config.php';
 
-
+/* Empty elements check */
 if(empty($_GET['id']))
     output_json('HomeID Is Empty!',true);
 
@@ -22,7 +22,7 @@ $PDOStmt->bindParam(':HomeID', $_GET['id'], PDO::PARAM_STR);
 $PDOStmt->bindParam(':HomePassword', md5($_GET['password']), PDO::PARAM_STR);
 
 $PDOStmt->execute();
-
+/* Query executed successfully */
 if($PDOStmt->rowCount())
     output_json(array('response'=>true,'msg'=>'Login Successfully'));
 else
