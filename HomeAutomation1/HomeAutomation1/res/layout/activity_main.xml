@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.example.homeautomation.FullscreenActivity" >
+
+    <!--
+         The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc.
+    -->
+
+<Button
+    android:id="@+id/button2"
+    style="?android:attr/buttonStyleSmall"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignRight="@+id/button1"
+    android:layout_below="@+id/button1"
+    android:layout_marginTop="62dp"
+    android:background="@drawable/roundedbutton"
+    android:paddingBottom="43dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="43dp"
+    android:text="SIGNUP"
+    android:textColor="@color/white"
+    
+    android:textSize="30dp" />
+
+<Button
+    android:id="@+id/button1"
+    style="?android:attr/buttonStyleSmall"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="67dp"
+    android:background="@drawable/roundedbutton"
+    android:paddingBottom="45dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="45dp"
+    android:text="LOGIN"
+    android:textColor="@color/white"
+    
+    android:textSize="30dp" />
+    
+</RelativeLayout>
