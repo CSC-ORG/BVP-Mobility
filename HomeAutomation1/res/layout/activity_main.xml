@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:custom="http://schemas.android.com/apk/res-auto"
+     android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkgrey" >
+    <RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+         
+          <com.iangclifton.android.floatlabel.FloatLabel
+            android:id="@+id/homeid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:textColor="@color/white"
+            android:hint="@string/homeid"
+            
+             />
+          
+           <com.iangclifton.android.floatlabel.FloatLabel
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="@string/password"
+            android:textColor="@color/white"/>
+           
+        
+     </LinearLayout>
+
+    
+
+    
+
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnLogin"
+        android:layout_alignRight="@+id/btnLogin"
+        android:layout_below="@+id/btnLogin"
+        android:layout_alignStart="@+id/btnLogin"
+        android:layout_alignEnd="@+id/btnLogin"
+        android:layout_marginTop="14dp"
+        android:background="#e81e61"
+        android:text="@string/signup"
+        android:textColor="@color/white"
+        android:textStyle="bold" 
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"/>
+	<com.dd.processbutton.iml.ActionProcessButton
+            android:id="@+id/btnLogin"
+            android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="312dp"
+        android:background="@drawable/beauty"
+         android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+           android:text="@string/login"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            custom:pb_colorComplete="#e81e61"
+            custom:pb_colorNormal="#e81e61"
+            custom:pb_colorPressed="#e81e61"
+            custom:pb_colorProgress="#e81e61"
+            custom:pb_textComplete="Success"
+            custom:pb_textProgress="Logging"
+            android:gravity="center_horizontal" 
+            android:layout_gravity="center_horizontal"/>
+    
+
+</RelativeLayout>
+
+</ScrollView>

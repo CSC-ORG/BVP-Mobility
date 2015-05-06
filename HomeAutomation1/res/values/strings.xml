@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HomeAutomation</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="appliance_id">Appliance ID</string>
+    <string name="appliance_name">Appliance Name</string>
+    <string name="password">Password</string>
+    <string name="homeid">HomeID</string>
+    <string name="name">Name</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="email_id">Email ID</string>
+    <string name="phone_no">Phone Number</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="appliance_add">Add Appliance</string>
+    <string name="add">ADD</string>
+    <string name="login">Login</string>
+    <string name="signup">Sign Up</string>
+
+</resources>
