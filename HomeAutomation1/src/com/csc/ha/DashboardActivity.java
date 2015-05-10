@@ -82,6 +82,7 @@ public class DashboardActivity extends ActionBarActivity {
 		changeFragment(new AccessDashboardFragment());
 ;		 SharedPreferences sharedpreferences = getSharedPreferences("ha", Context.MODE_PRIVATE);
 		 HomeId=sharedpreferences.getString("user", "null");
+		 Log.e("home id saved", ""+HomeId);
 		 initilizeGCM();
 	}
 

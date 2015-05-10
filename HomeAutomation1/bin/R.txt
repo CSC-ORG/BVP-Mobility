@@ -522,7 +522,7 @@ int drawable rect_normal 0x7f02005c
 int drawable rect_pressed 0x7f02005d
 int drawable rect_progress 0x7f02005e
 int drawable splash 0x7f02005f
-int id FollowAndCenterButton3 0x7f0b0070
+int id FollowAndCenterButton3 0x7f0b0071
 int id action_bar 0x7f0b004e
 int id action_bar_activity_content 0x7f0b0007
 int id action_bar_container 0x7f0b004d
@@ -536,7 +536,7 @@ int id action_menu_presenter 0x7f0b000a
 int id action_mode_bar 0x7f0b004b
 int id action_mode_bar_stub 0x7f0b004a
 int id action_mode_close_button 0x7f0b003d
-int id action_settings 0x7f0b0071
+int id action_settings 0x7f0b0072
 int id activity_chooser_view_content 0x7f0b003e
 int id add_app 0x7f0b0066
 int id adjust_height 0x7f0b000d
@@ -547,7 +547,7 @@ int id beginning 0x7f0b0038
 int id book_now 0x7f0b001d
 int id btnAdd 0x7f0b0063
 int id btnLogin 0x7f0b0060
-int id btnSignUp 0x7f0b006f
+int id btnSignUp 0x7f0b0070
 int id btnSignup 0x7f0b005f
 int id button1 0x7f0b0068
 int id button2 0x7f0b0067
@@ -572,12 +572,12 @@ int id expanded_menu 0x7f0b0045
 int id fab_expand_menu_button 0x7f0b0000
 int id fab_label 0x7f0b0001
 int id float_label 0x7f0b0002
-int id float_label_1 0x7f0b0069
-int id float_label_2 0x7f0b006a
-int id float_label_3 0x7f0b006b
-int id float_label_4 0x7f0b006c
-int id float_label_5 0x7f0b006d
-int id float_label_6 0x7f0b006e
+int id float_label_1 0x7f0b006a
+int id float_label_2 0x7f0b006b
+int id float_label_3 0x7f0b006c
+int id float_label_4 0x7f0b006d
+int id float_label_5 0x7f0b006e
+int id float_label_6 0x7f0b006f
 int id grayscale 0x7f0b0022
 int id holo_dark 0x7f0b0014
 int id holo_light 0x7f0b0015
@@ -588,6 +588,7 @@ int id hybrid 0x7f0b0010
 int id icon 0x7f0b0043
 int id ifRoom 0x7f0b0033
 int id image 0x7f0b0040
+int id lastDevice 0x7f0b0069
 int id left 0x7f0b0026
 int id listMode 0x7f0b0029
 int id listViewFromDB 0x7f0b0065

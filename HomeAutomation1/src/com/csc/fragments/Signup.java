@@ -81,9 +81,9 @@ public class Signup extends Fragment implements GsonSampleRequest,com.csc.model.
 					name.getEditText().setError("Invalid name");
 				}
 				final String HomeId = homeid.getEditText().getText().toString();
-				if (!isValidName(name1)) {
+				if (!isValidHome(HomeId)) {
 					isValid=false;
-					homeid.getEditText().setError("Invalid name");
+					homeid.getEditText().setError("Invalid HomeId");
 				}
 				
 				final String email1 = email.getEditText().getText().toString();
@@ -139,6 +139,17 @@ public class Signup extends Fragment implements GsonSampleRequest,com.csc.model.
 		Matcher matcher = pattern.matcher(name1);
 		return matcher.matches();
 	}
+    private boolean isValidHome(String home) {
+    	try{
+    		Long.parseLong(home);
+    		if(home.length()>=5)
+    			return true;
+    	}catch(Exception e)
+    	{
+    		return false;
+    	}
+    	return false;
+    	}
 
 // validating email id
 	private boolean isValidEmail(String email1) {

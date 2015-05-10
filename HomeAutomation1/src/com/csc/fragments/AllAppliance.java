@@ -108,7 +108,11 @@ public void createSampleGsonRequest() {
         stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
 			@Override
 			public void onResponse(String response) {
-				parseFlickrImageResponse(response);
+				Log.e("all appliance response", ""+response);
+				if(response!=null&response.contains("response"))
+					parseFlickrImageResponse(response);
+				//else
+					//Toast.makeText(getActivity(), "Request Failed, Please Try Again", 2000).show();
 				//adapter.setNotifyOnChange(true)
 ;			}
 		}, new Response.ErrorListener() {
@@ -143,30 +147,41 @@ private void showToast(String msg) {
 }
 private void parseFlickrImageResponse(String response) {
 
-	mDataList.clear();
-	MockAllApplianceController mController = new MockAllApplianceController(response);
-	mController.init();
-	for(Appliance app : mController.findAll())
-	{
-		mDataList.add(new Appliance(app.getID(), app.getappname(), app.getappid(), app.getappstatus()));
-	}
-	try{
-		LocalDatabase ld = new LocalDatabase(getActivity());
-		ld.open();
-		ld.deleteAll();
 	
-		for(int i=0;i<mDataList.size();i++)
+	
+	
+	try{
+		MockAllApplianceController mController = new MockAllApplianceController(response);
+		mController.init();
+		if(mController.findAll().size()>0)
 		{
-			ld.createEntry(mDataList.get(i).getappid(),mDataList.get(i).getappname(),mDataList.get(i).getappstatus(),DashboardActivity.HomeId);
+			mDataList.clear();
+			adapter = new EfficientAdapter (getActivity(),  R.layout.list, mController.findAll() );
+			 
+			mListView.setAdapter(adapter);
+			for(Appliance app : mController.findAll())
+			{
+				mDataList.add(new Appliance(app.getID(), app.getappname(), app.getappid(), app.getappstatus()));
+			}
+			LocalDatabase ld = new LocalDatabase(getActivity());
+			
+			ld.open();
+			ld.deleteAll();
+		
+			for(int i=0;i<mDataList.size();i++)
+			{
+				ld.createEntry(mDataList.get(i).getappid(),mDataList.get(i).getappname(),mDataList.get(i).getappstatus(),DashboardActivity.HomeId);
+			}
+			ld.close();
+			adapter = new EfficientAdapter (getActivity(),  R.layout.list, mDataList );
+			 
+			mListView.setAdapter(adapter);
 		}
-		ld.close();
 	}catch(Exception e)
 	{
 		
 	}
-	adapter = new EfficientAdapter (getActivity(),  R.layout.list, mDataList );
-	 
-	mListView.setAdapter(adapter);
+	
 	
 }
 

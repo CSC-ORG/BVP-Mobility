@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.csc.ha.DashboardActivity;
 import com.csc.ha.MainActivity;
@@ -21,6 +22,7 @@ import com.csc.ha.R;
 
 public class AccessDashboardFragment extends Fragment {
 	Button btnAccessDashboard,btnLogout;
+	TextView lastDevice;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater,
@@ -38,7 +40,15 @@ public class AccessDashboardFragment extends Fragment {
 				}
 		    	
 		    });
-		    
+		    lastDevice=(TextView)rootView.findViewById(R.id.lastDevice);
+		    SharedPreferences sharedpreferences = getActivity().getSharedPreferences("ha", Context.MODE_PRIVATE);
+			 String lastdevice=sharedpreferences.getString("last_device", null);
+			 if(lastdevice!=null)
+			 {
+				 lastDevice.setText("Last Accessed Device :"+ lastdevice);
+			 }
+			 else
+				 lastDevice.setVisibility(View.GONE);
 		    btnLogout = (Button)rootView.findViewById(R.id.button2);
 		    
 		    btnLogout.setOnClickListener(new OnClickListener() {

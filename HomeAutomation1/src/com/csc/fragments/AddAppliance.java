@@ -113,7 +113,12 @@ public class AddAppliance extends Fragment implements GsonSampleRequest, com.csc
 			mVolleyQueue.add(stringRequest);
 	}
 	private void showToast(String msg) {
-		Toast.makeText(getActivity(), msg, Toast.LENGTH_LONG).show();
+		try{
+			Toast.makeText(getActivity(), msg, Toast.LENGTH_LONG).show();
+		}catch(Exception e)
+		{
+			
+		}
 		btnAdd.setEnabled(true);
 		progressGenerator.start(btnAdd);
 		btnAdd.setText(R.string.add);

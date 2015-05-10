@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -261,6 +262,7 @@ class DeleteJSONAsyncTask extends AsyncTask<String, Void, Boolean> {
 		       stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {
+						Log.e("response is ", ""+response);
 						parseFlickrImageResponse(response);
 						
 					}
@@ -316,17 +318,28 @@ class DeleteJSONAsyncTask extends AsyncTask<String, Void, Boolean> {
 		Toast.makeText(mContext, msg, Toast.LENGTH_LONG).show();
 	}
 	private void parseFlickrImageResponse(String response) {
+		try{
+			
 		
-		MockGeneralizedController mController = new MockGeneralizedController(response);
-		mController.init();
-		GeneralizedModel model = mController.findAll();
-		if (model.getResponse().equalsIgnoreCase("true")) 
+			
+			MockGeneralizedController mController = new MockGeneralizedController(response);
+			mController.init();
+			GeneralizedModel model = mController.findAll();
+			if (model.getResponse().equalsIgnoreCase("true")) 
+			{
+				
+				((DashboardActivity)mContext).changeFragment(new AllAppliance());
+				SharedPreferences sharedpreferences = mContext.getSharedPreferences("ha", Context.MODE_PRIVATE);
+				Editor editor=sharedpreferences.edit();
+				editor.putString("last_device",""+objects.get(mPosition).getappname());
+				editor.commit();
+				
+			}
+			showToast(model.getMessage());
+		}catch(Exception e)
 		{
 			
-			((DashboardActivity)mContext).changeFragment(new AllAppliance());
-			
 		}
-		showToast(model.getMessage());
 	}
 	
 }
